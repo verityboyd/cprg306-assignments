@@ -1,12 +1,14 @@
+import Link from "next/link";
+
 export default function StudentInfo() {
   return (
-    <header>
+    <section>
       <h2>Verity Boyd</h2>
       <h2>
         <Link href="https://github.com/verityboyd/cprg306-assignments">
-          GitHub Repo
+          verityboyd/cprg306-assignments
         </Link>
       </h2>
-    </header>
+    </section>
   );
 }
