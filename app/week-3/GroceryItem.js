@@ -2,10 +2,10 @@
 
 export default function GroceryItem({ name, quantity, category }) {
   return (
-    <ul>
-      <li>{name} </li>
-      <li>Quantity: {quantity}</li>
-      <li>Category: {category}</li>
-    </ul>
+    <li className="m-5 py-3 px-5 border rounded">
+      {name}
+      <div>Quantity: {quantity}</div>
+      <div>Category: {category}</div>
+    </li>
   );
 }
