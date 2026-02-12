@@ -17,12 +17,9 @@ export default function NewItem() {
   }
   return (
     <section className="m-15 p-10 border rounded">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div className="pb-10">
-          <label
-            className="w-full p-2 rounded-md text-lg font-medium"
-            htmlFor="name"
-          >
+          <label className="p-2 rounded-md text-lg font-medium" htmlFor="name">
             Name:
           </label>
           <input
@@ -34,7 +31,7 @@ export default function NewItem() {
             required
           />
         </div>
-        <div className="flex gap-2 w-full p-2 rounded-md">
+        <div className="flex flex-row gap-2 p-2 rounded-md">
           <label className="text-lg font-medium" htmlFor="quantity">
             Quantity:
           </label>
@@ -60,21 +57,21 @@ export default function NewItem() {
             <option value="dairy">Dairy</option>
             <option value="bakery">Bakery</option>
             <option value="meat">Meat</option>
-            <option value="frozenFoods">Frozen Foods</option>
-            <option value="cannedGoods">Canned Goods</option>
-            <option value="dryGoods">Dry Goods</option>
+            <option value="frozen foods">Frozen Foods</option>
+            <option value="canned goods">Canned Goods</option>
+            <option value="dry goods">Dry Goods</option>
             <option value="beverages">Beverages</option>
             <option value="snacks">Snacks</option>
             <option value="household">Household</option>
             <option value="other">Other</option>
           </select>
         </div>
-        <div className="flex flex-col items-center pt-10">
+        <div className="flex justify-center pt-10">
           <button
-            className="w-20 m-1 p-1 border rounded text-xl font-bold bg-pink-300"
+            className="w-30 m-1 p-1 border rounded text-xl font-medium bg-pink-200 hover:bg-pink-400"
             type="submit"
           >
-            +
+            + Add
           </button>
         </div>
       </form>
