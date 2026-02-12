@@ -1,7 +1,8 @@
 import Item from "./item";
-import items from "./items.json";
+import { useState } from "react";
 
-export default function ItemList() {
+export default function ItemList({ items }) {
+  const [sortBy, setSortBy] = useState("name");
   return (
     <ul>
       {items.map((item) => (
