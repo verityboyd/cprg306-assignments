@@ -73,7 +73,7 @@ export default function NewItem({ onAddItem }) {
         </div>
         <div className="flex justify-center pt-10">
           <button
-            className="w-30 m-1 p-1 border rounded text-xl font-medium bg-pink-200 hover:bg-pink-400"
+            className="w-30 m-1 p-1 border rounded text-xl font-medium bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600"
             type="submit"
           >
             + Add

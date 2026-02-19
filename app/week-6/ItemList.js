@@ -17,13 +17,13 @@ export default function ItemList({ items }) {
         <div className="flex flex-row justify-center">
           <button
             onClick={() => setSortBy("name")}
-            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 ${sortBy === "name" ? "font-semibold bg-pink-400" : ""}`}
+            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600 ${sortBy === "name" ? "font-semibold bg-pink-400 dark:bg-blue-900" : ""}`}
           >
             Name
           </button>
           <button
             onClick={() => setSortBy("category")}
-            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 ${sortBy === "category" ? "font-semibold bg-pink-400" : ""}`}
+            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600 ${sortBy === "category" ? "font-semibold bg-pink-400 dark:bg-blue-900" : ""}`}
           >
             Category
           </button>
