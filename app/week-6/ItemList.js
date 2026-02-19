@@ -10,12 +10,24 @@ export default function ItemList({ items }) {
       return a.category.localeCompare(b.category);
     }
   });
-  //style buttons later
   return (
     <div>
-      <div>
-        <button onClick={() => setSortBy("name")}>Name</button>
-        <button onClick={() => setSortBy("category")}>Category</button>
+      <div className="flex flex-col items-center">
+        <h3 className="text-xl">Sort List By:</h3>
+        <div className="flex flex-row justify-center">
+          <button
+            onClick={() => setSortBy("name")}
+            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 ${sortBy === "name" ? "font-semibold bg-pink-400" : ""}`}
+          >
+            Name
+          </button>
+          <button
+            onClick={() => setSortBy("category")}
+            className={`border rounded m-2 px-3 py-1 bg-pink-200 hover:bg-pink-400 ${sortBy === "category" ? "font-semibold bg-pink-400" : ""}`}
+          >
+            Category
+          </button>
+        </div>
       </div>
       <ul>
         {sorted.map((item) => (
