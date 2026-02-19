@@ -6,10 +6,14 @@ export default function NewItem({ onAddItem }) {
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    item.id = Math.random().toString(36).substring(2, 9);
-    const item = { id, name, quantity, category };
+  function handleSubmit(e) {
+    e.preventDefault();
+    const item = {
+      id: Math.random().toString(36).substring(2, 9),
+      name,
+      quantity,
+      category,
+    };
     onAddItem(item);
     console.log(item);
     setName("");
