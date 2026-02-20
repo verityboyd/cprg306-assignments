@@ -2,6 +2,19 @@
 import { useState } from "react";
 
 export default function NewItem({ onAddItem }) {
+  const categories = [
+    "produce",
+    "dairy",
+    "bakery",
+    "meat",
+    "frozen foods",
+    "canned goods",
+    "dry goods",
+    "beverages",
+    "snacks",
+    "household",
+    "other",
+  ];
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");
@@ -58,17 +71,11 @@ export default function NewItem({ onAddItem }) {
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
-            <option value="produce">Produce</option>
-            <option value="dairy">Dairy</option>
-            <option value="bakery">Bakery</option>
-            <option value="meat">Meat</option>
-            <option value="frozen foods">Frozen Foods</option>
-            <option value="canned goods">Canned Goods</option>
-            <option value="dry goods">Dry Goods</option>
-            <option value="beverages">Beverages</option>
-            <option value="snacks">Snacks</option>
-            <option value="household">Household</option>
-            <option value="other">Other</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
           </select>
         </div>
         <div className="flex justify-center pt-10">
