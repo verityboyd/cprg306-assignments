@@ -30,9 +30,11 @@ export default function Page() {
     setItems((prev) => [...prev, newItem]);
   }
   return (
-    <main className="flex flex-col items-center m-4">
-      <h1 className="font-bold text-3xl">Add To Shopping List & Meal Ideas</h1>
-      <div className="flex flex-row">
+    <main className="flex flex-col items-center m-4 w-full">
+      <h1 className="font-bold text-3xl text-center">
+        Add To Shopping List & Meal Ideas
+      </h1>
+      <div className="flex flex-col md:flex-row">
         <div className="flex flex-col items-start">
           <NewItem onAddItem={handleAddItem} />
           <ItemList onItemSelect={handleItemSelect} items={items} />
