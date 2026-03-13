@@ -6,7 +6,6 @@ export default function SignedOut() {
 
   async function signIn() {
     await gitHubSignIn();
-    router;
   }
 
   return (
