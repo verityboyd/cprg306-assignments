@@ -6,11 +6,19 @@ import { useState } from "react";
 import MealIdeas from "./MealIdeas";
 import { useUserAuth } from "@/app/contexts/AuthContext";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [items, setItems] = useState(itemsData);
   const [selectedItemName, setSelectedItemName] = useState("");
-  const { user } = useUserAuth();
+  const { user, firebaseSignOut } = useUserAuth();
+  const router = useRouter();
+
+  async function handleClick() {
+    await firebaseSignOut();
+    router.push("/week-9");
+  }
 
   function cleanItem(itemName) {
     //remove emoji
@@ -50,9 +58,11 @@ export default function Page() {
   }
   return (
     <main className="flex flex-col items-center px-4 pt-4 w-full">
-      <h1 className="font-bold text-3xl text-center">
-        Add To Shopping List & Meal Ideas
-      </h1>
+      <div>
+        <h1 className="font-bold text-3xl text-center">
+          Add To Shopping List & Meal Ideas
+        </h1>
+      </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col items-start">
           <NewItem onAddItem={handleAddItem} />
@@ -61,6 +71,14 @@ export default function Page() {
         <div className="my-13 mx-5 w-60">
           <MealIdeas ingredient={selectedItemName} />
         </div>
+      </div>
+      <div className="fixed bottom-6 right-4">
+        <button
+          onClick={handleClick}
+          className="p-1.5 border rounded-4xl text-md font-medium bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600"
+        >
+          <Icon icon="mdi:logout" width="24" height="24" />
+        </button>
       </div>
     </main>
   );
