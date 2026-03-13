@@ -75,7 +75,7 @@ export default function Page() {
       <div className="fixed bottom-6 right-4">
         <button
           onClick={handleClick}
-          className="p-1.5 border rounded-4xl text-md font-medium bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600"
+          className="cursor-pointer p-1.5 border rounded-4xl text-md font-medium bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600"
         >
           <Icon icon="mdi:logout" width="24" height="24" />
         </button>
