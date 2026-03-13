@@ -35,7 +35,7 @@ export default function Page() {
 
   if (!user) {
     return (
-      <section className="flex flex-col items-center m-4 w-full">
+      <section className="flex flex-col items-center px-4 pt-4 w-full">
         <div className="m-5 my-15 p-10 border rounded">
           <p className="text-center font-medium text-2xl">
             You must be{" "}
@@ -49,7 +49,7 @@ export default function Page() {
     );
   }
   return (
-    <main className="flex flex-col items-center m-4 w-full">
+    <main className="flex flex-col items-center px-4 pt-4 w-full">
       <h1 className="font-bold text-3xl text-center">
         Add To Shopping List & Meal Ideas
       </h1>

@@ -30,7 +30,7 @@ export default function Page() {
     setItems((prev) => [...prev, newItem]);
   }
   return (
-    <main className="flex flex-col items-center m-4 w-full">
+    <main className="flex flex-col items-center px-4 pt-4 w-full">
       <h1 className="font-bold text-3xl text-center">
         Add To Shopping List & Meal Ideas
       </h1>
