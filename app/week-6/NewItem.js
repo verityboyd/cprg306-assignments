@@ -28,7 +28,6 @@ export default function NewItem({ onAddItem }) {
       category,
     };
     onAddItem(item);
-    console.log(item);
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -58,7 +57,7 @@ export default function NewItem({ onAddItem }) {
             type="number"
             id="quantity"
             value={quantity}
-            onChange={(event) => setQuantity(event.target.value)}
+            onChange={(event) => setQuantity(Number(event.target.value))}
             min="1"
             max="99"
           />

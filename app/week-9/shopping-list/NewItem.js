@@ -37,7 +37,6 @@ export default function NewItem({ onAddItem }) {
     e.preventDefault();
     const newItem = { ...item, id: crypto.randomUUID() };
     onAddItem(newItem);
-    console.log(newItem);
     setItem(initialState);
   }
   return (
