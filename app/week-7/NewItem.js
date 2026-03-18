@@ -22,11 +22,7 @@ export default function NewItem({ onAddItem }) {
     category: "produce",
   };
 
-  const [item, setItem] = useState({
-    name: "",
-    quantity: 1,
-    category: "produce",
-  });
+  const [item, setItem] = useState(initialState);
 
   function handleChange(e) {
     const { name, value } = e.target;
