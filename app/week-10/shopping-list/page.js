@@ -5,15 +5,13 @@ import { useState, useEffect } from "react";
 import MealIdeas from "./MealIdeas";
 import { useUserAuth } from "@/app/contexts/AuthContext";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
-import { useRouter } from "next/navigation";
 import { getItems, addItem } from "../_services/ShoppingListService";
+import Navbar from "../components/Navbar";
 
 export default function Page() {
   const [items, setItems] = useState([]);
   const [selectedItemName, setSelectedItemName] = useState("");
-  const { user, firebaseSignOut } = useUserAuth();
-  const router = useRouter();
+  const { user } = useUserAuth();
 
   async function loadItems() {
     if (user?.uid) {
@@ -27,11 +25,6 @@ export default function Page() {
   useEffect(() => {
     loadItems();
   }, [user]);
-
-  async function handleClick() {
-    await firebaseSignOut();
-    router.push("/week-10");
-  }
 
   function cleanItem(itemName) {
     //remove emoji
@@ -73,12 +66,11 @@ export default function Page() {
   }
   return (
     <main className="flex flex-col items-center px-4 pt-4 w-full">
-      <div>
-        <h1 className="font-bold text-3xl text-center">
-          Add To Shopping List & Meal Ideas
-        </h1>
+      <div className="flex flex-col w-full justify-between items-center pt-5">
+        <h1 className="font-bold text-4xl px-8">Shopping List & Meal Ideas</h1>
+        <Navbar />
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row pt-10">
         <div className="flex flex-col items-start">
           <NewItem onAddItem={handleAddItem} />
           <ItemList onItemSelect={handleItemSelect} items={items} />
@@ -86,14 +78,6 @@ export default function Page() {
         <div className="my-13 mx-5 w-60">
           <MealIdeas ingredient={selectedItemName} />
         </div>
-      </div>
-      <div className="fixed bottom-6 right-4">
-        <button
-          onClick={handleClick}
-          className="cursor-pointer p-1.5 border rounded-4xl text-md font-medium bg-pink-200 hover:bg-pink-400 dark:hover:bg-blue-400 dark:bg-blue-600"
-        >
-          <Icon icon="mdi:logout" width="24" height="24" />
-        </button>
       </div>
     </main>
   );
